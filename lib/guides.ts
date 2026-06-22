@@ -312,6 +312,158 @@ export const guides: Guide[] = [
       ],
     },
   },
+  {
+    slug: "reaction-time-by-age",
+    title: { ko: "나이에 따라 반응속도는 어떻게 달라질까?", en: "How Does Reaction Time Change With Age?" },
+    description: {
+      ko: "연령대별 평균 반응속도 경향과 개인차, 그리고 나이보다 결과에 더 큰 영향을 주는 요소들을 정리했습니다.",
+      en: "General age trends in reaction time, individual variation, and the factors that affect results more than age.",
+    },
+    sections: {
+      ko: [
+        {
+          heading: "대략적인 경향",
+          body: "단순 반응속도는 보통 10대 후반에서 20대 초반에 가장 빠른 경향을 보이고, 이후 나이가 들면서 조금씩 느려진다고 알려져 있습니다. 다만 이는 평균적인 경향일 뿐 같은 나이대 안에서도 개인차가 매우 큽니다.",
+        },
+        {
+          heading: "나이보다 중요한 것들",
+          body: "수면, 카페인, 피로도, 집중 상태, 사용하는 기기와 입력장치가 한 번의 측정 결과를 크게 좌우합니다. 같은 사람이라도 컨디션에 따라 50ms 이상 차이가 날 수 있습니다.",
+        },
+        {
+          heading: "어떻게 활용할까",
+          body: "나이대 평균과 비교하기보다, 같은 환경에서 꾸준히 측정한 자신의 평균 흐름을 보는 편이 더 의미 있습니다. 테스티어의 최근 기록 그래프가 그 변화를 보여줍니다.",
+        },
+      ],
+      en: [
+        {
+          heading: "The general trend",
+          body: "Simple reaction time tends to be fastest in the late teens to early twenties and gradually slows with age. This is only an average trend, and variation within any age group is large.",
+        },
+        {
+          heading: "What matters more than age",
+          body: "Sleep, caffeine, fatigue, focus, and your device and input method strongly affect a single measurement. The same person can vary by more than 50ms depending on condition.",
+        },
+        {
+          heading: "How to use it",
+          body: "Rather than comparing yourself to an age average, watch your own average measured consistently on the same setup. Testier's recent-score chart shows that change over time.",
+        },
+      ],
+    },
+  },
+  {
+    slug: "aim-training-tips",
+    title: { ko: "에임을 효과적으로 연습하는 방법", en: "How to Practice Aim Effectively" },
+    description: {
+      ko: "조준 정확도와 속도를 함께 키우는 연습 원리와, 많은 사람이 하는 흔한 실수를 정리했습니다.",
+      en: "Principles for building aim accuracy and speed together, and the common mistakes to avoid.",
+    },
+    sections: {
+      ko: [
+        {
+          heading: "정확도가 먼저입니다",
+          body: "처음부터 빠르게 휘두르면 실수가 늘어 평균이 나빠집니다. 먼저 타깃 중심을 정확히 맞히는 감각을 만들고, 정확도가 안정되면 속도를 점차 올리는 편이 효율적입니다.",
+        },
+        {
+          heading: "환경을 일정하게",
+          body: "마우스 감도(DPI)와 화면 설정을 고정하고 같은 환경에서 연습하세요. 매번 설정이 바뀌면 근육 기억이 쌓이지 않아 결과 해석도 어려워집니다.",
+        },
+        {
+          heading: "짧고 자주",
+          body: "한 번에 오래 하기보다 짧은 세션을 자주 반복하는 편이 집중력 유지에 유리합니다. 손목에 통증이 있으면 즉시 멈추고 휴식하세요.",
+        },
+      ],
+      en: [
+        {
+          heading: "Accuracy comes first",
+          body: "Swinging fast from the start raises misses and hurts your average. Build the feel of hitting the target center accurately, then raise speed once accuracy is stable.",
+        },
+        {
+          heading: "Keep your setup consistent",
+          body: "Fix your mouse sensitivity (DPI) and display settings and practice in the same environment. Changing settings each time prevents muscle memory from forming and makes results harder to read.",
+        },
+        {
+          heading: "Short and frequent",
+          body: "Frequent short sessions keep focus better than one long grind. Stop and rest immediately if your wrist hurts.",
+        },
+      ],
+    },
+  },
+  {
+    slug: "what-is-a-good-cps",
+    title: { ko: "좋은 CPS는 몇일까? 클릭 속도 기준 정리", en: "What Is a Good CPS? Click Speed Benchmarks" },
+    description: {
+      ko: "초당 클릭 수(CPS)의 일반적인 구간, 측정 시간의 영향, 그리고 기법과 주의사항을 정리했습니다.",
+      en: "Common clicks-per-second ranges, how test duration changes the number, and techniques with cautions.",
+    },
+    sections: {
+      ko: [
+        {
+          heading: "일반적인 구간",
+          body: "일반 클릭은 보통 초당 6~8회 정도입니다. 10회를 넘기면 빠른 편이고, 지터 클릭이나 버터플라이 클릭 같은 기법을 쓰면 더 높은 수치가 나오기도 합니다.",
+        },
+        {
+          heading: "측정 시간의 영향",
+          body: "1초나 5초 같은 짧은 모드는 순간 폭발력이 중요해 수치가 높게 나오고, 30초나 60초처럼 길어지면 지구력 때문에 평균이 내려갑니다. 그래서 같은 모드끼리 비교해야 공정합니다.",
+        },
+        {
+          heading: "주의사항",
+          body: "CPS는 재미와 기록 비교를 위한 참고 지표입니다. 손가락과 손목에 무리가 가지 않는 범위에서 즐기고, 통증이 느껴지면 멈추세요.",
+        },
+      ],
+      en: [
+        {
+          heading: "Common ranges",
+          body: "Normal clicking is often around 6-8 clicks per second. Above 10 is fast, and techniques like jitter or butterfly clicking can push higher numbers.",
+        },
+        {
+          heading: "How duration matters",
+          body: "Short modes like 1 or 5 seconds reward burst speed and read higher, while 30 or 60 second modes drop the average due to endurance. Compare the same mode for a fair result.",
+        },
+        {
+          heading: "A caution",
+          body: "CPS is a reference for fun and comparison. Enjoy it within a comfortable range for your fingers and wrist, and stop if you feel pain.",
+        },
+      ],
+    },
+  },
+  {
+    slug: "stroop-effect-explained",
+    title: { ko: "스트룹 효과란? 색상 매칭 테스트가 어려운 이유", en: "What Is the Stroop Effect? Why Color Match Tests Are Tricky" },
+    description: {
+      ko: "단어 의미와 글자 색이 충돌할 때 생기는 스트룹 효과와, 색상 매칭 테스트가 측정하는 능력을 설명합니다.",
+      en: "The Stroop effect that appears when a word's meaning conflicts with its color, and what a color match test measures.",
+    },
+    sections: {
+      ko: [
+        {
+          heading: "스트룹 효과란",
+          body: "'빨강'이라는 단어가 파란색으로 적혀 있으면, 글자 색을 말하려 할 때 단어의 의미가 방해를 합니다. 이렇게 의미와 색상 정보가 충돌해 반응이 느려지는 현상을 스트룹 효과라고 합니다.",
+        },
+        {
+          heading: "무엇을 측정하나",
+          body: "색상 매칭 테스트는 단순 속도뿐 아니라, 방해되는 정보를 억제하고 필요한 정보에만 집중하는 선택적 주의력을 함께 봅니다. 그래서 단순 반응속도보다 조금 더 어렵게 느껴집니다.",
+        },
+        {
+          heading: "잘 보는 팁",
+          body: "단어를 읽기보다 글자 색을 먼저 보고, 판단 버튼의 위치를 미리 외워 두면 시간을 줄일 수 있습니다. 틀린 직후에도 리듬을 잃지 않는 것이 중요합니다.",
+        },
+      ],
+      en: [
+        {
+          heading: "What it is",
+          body: "If the word 'red' is printed in blue, the word's meaning interferes when you try to name the color. This slowdown from a conflict between meaning and color is called the Stroop effect.",
+        },
+        {
+          heading: "What it measures",
+          body: "A color match test checks not just raw speed but selective attention: suppressing the distracting information and focusing on what matters. That is why it feels harder than a simple reaction test.",
+        },
+        {
+          heading: "Tips for a better run",
+          body: "Look at the text color before reading the word, and memorize the button positions to decide faster. Keeping your rhythm right after a mistake matters most.",
+        },
+      ],
+    },
+  },
 ];
 
 export function getGuide(slug: string): Guide | undefined {
