@@ -15,6 +15,7 @@ type SeoInput = {
 export function buildMetadata({ locale, path, title, description }: SeoInput): Metadata {
   const normalizedPath = path.startsWith("/") ? path : `/${path}`;
   const url = `${siteUrl}${normalizedPath}`;
+  const ogImage = `${siteUrl}/api/og/default`;
 
   return {
     metadataBase: new URL(siteUrl),
@@ -35,11 +36,13 @@ export function buildMetadata({ locale, path, title, description }: SeoInput): M
       siteName: "Testier",
       locale: locale === "ko" ? "ko_KR" : "en_US",
       type: "website",
+      images: [{ url: ogImage, width: 1200, height: 630, alt: "Testier" }],
     },
     twitter: {
       card: "summary_large_image",
       title,
       description,
+      images: [ogImage],
     },
   };
 }
