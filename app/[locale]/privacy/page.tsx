@@ -15,7 +15,7 @@ const privacySections = {
     },
     {
       title: "2. 자동으로 처리될 수 있는 정보",
-      body: "서비스 안정성, 보안, 통계, 광고 제공을 위해 접속 시간, 브라우저 종류, 기기 정보, 대략적인 지역, IP 주소, 쿠키 또는 유사 기술 정보가 호스팅 제공자, 광고 제공자, 브라우저에 의해 처리될 수 있습니다.",
+      body: "서비스 안정성, 보안, 통계, 광고 제공을 위해 접속 시간, 브라우저 종류, 기기 정보, 대략적인 지역, IP 주소, 쿠키 또는 유사 기술 정보가 호스팅 제공자, 광고 제공자, 브라우저에 의해 처리될 수 있습니다. 방문 통계 분석을 위해 Google Analytics(GA4)를 사용하며, 이 과정에서 쿠키와 익명화된 사용 데이터가 처리될 수 있습니다.",
     },
     {
       title: "3. localStorage와 쿠키",
@@ -61,7 +61,7 @@ const privacySections = {
     },
     {
       title: "2. Information That May Be Processed Automatically",
-      body: "For reliability, security, statistics, and advertising, access time, browser type, device information, approximate location, IP address, cookies, or similar technology data may be processed by hosting providers, ad providers, or the browser.",
+      body: "For reliability, security, statistics, and advertising, access time, browser type, device information, approximate location, IP address, cookies, or similar technology data may be processed by hosting providers, ad providers, or the browser. We use Google Analytics (GA4) for visit statistics, which may process cookies and anonymized usage data.",
     },
     {
       title: "3. localStorage and Cookies",
