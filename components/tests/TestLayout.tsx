@@ -5,6 +5,7 @@ import { categoryLabels } from "@/lib/tests";
 import { getDictionary } from "@/lib/dictionary";
 import { AdPlaceholder } from "@/components/common/AdPlaceholder";
 import { FAQ } from "@/components/common/FAQ";
+import { Leaderboard } from "@/components/tests/Leaderboard";
 import { SectionTitle } from "@/components/common/SectionTitle";
 import { SharedResultNotice } from "@/components/common/SharedResultNotice";
 import { TestBenchmarkGuide } from "@/components/tests/TestBenchmarkGuide";
@@ -30,6 +31,7 @@ export function TestLayout({
         <SharedResultNotice locale={locale} />
       </Suspense>
       {children}
+      <Leaderboard slug={test.slug} scoreType={test.scoreType} locale={locale} />
       <section className="rounded-lg border border-white/10 bg-white/[0.035] p-5">
         <SectionTitle title={locale === "ko" ? "테스트 설명" : "About this test"} description={test.seoDescription[locale]} />
         <div className="grid gap-4 md:grid-cols-2">

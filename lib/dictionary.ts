@@ -62,6 +62,23 @@ export const dictionary = {
       champion: "챔피언",
       top: "상위",
     },
+    leaderboard: {
+      title: "리더보드 TOP 10",
+      subtitle: "내 최고 기록을 등록하고 다른 사람들과 비교해 보세요.",
+      rank: "순위",
+      player: "닉네임",
+      score: "기록",
+      empty: "아직 등록된 기록이 없어요. 첫 기록의 주인공이 되어보세요!",
+      loading: "불러오는 중...",
+      yourBest: "내 최고 기록",
+      noBest: "먼저 테스트를 완료하면 기록을 등록할 수 있어요.",
+      nicknamePlaceholder: "닉네임 (최대 20자)",
+      submit: "기록 등록",
+      submitting: "등록 중...",
+      submitted: "등록되었어요! 🎉",
+      error: "문제가 발생했어요. 잠시 후 다시 시도해 주세요.",
+      disclaimer: "리더보드에 등록하면 입력한 닉네임과 점수가 서버에 저장됩니다. 측정 환경에 따라 기록이 달라질 수 있어 참고용입니다.",
+    },
     legal: {
       aboutTitle: "테스티어 소개",
       aboutBody:
@@ -71,7 +88,7 @@ export const dictionary = {
         "테스티어 이용 중 궁금한 점, 버그 신고, 기능 제안, 광고 및 제휴 문의, 개인정보 관련 요청이 있으시면 아래 이메일로 연락해 주세요. 보통 영업일 기준 2~3일 이내에 답변드리도록 노력하고 있습니다.",
       privacyTitle: "개인정보 처리방침",
       privacyBody:
-        "현재 테스티어 MVP는 회원가입, 서버 저장, 개인 식별 정보 수집을 하지 않습니다. 최고 기록과 최근 기록은 사용자의 브라우저 localStorage에만 저장됩니다. 향후 광고 서비스 적용 시 각 광고 플랫폼의 쿠키 및 개인정보 정책이 추가될 수 있습니다.",
+        "테스티어는 회원가입을 받지 않으며, 최고 기록과 최근 기록은 기본적으로 브라우저 localStorage에 저장됩니다. 단, 리더보드에 직접 등록하면 입력한 닉네임과 점수가 서버에 저장됩니다. 향후 광고 서비스 적용 시 각 광고 플랫폼의 쿠키 및 개인정보 정책이 추가될 수 있습니다.",
       termsTitle: "이용약관",
       termsBody:
         "테스티어의 테스트 결과는 오락과 자기 개선 참고용입니다. 의학적, 과학적, 전문적 평가나 진단으로 사용할 수 없습니다. 사이트 이용 과정에서 발생하는 개인 판단과 결과 해석은 사용자 책임입니다.",
@@ -138,6 +155,23 @@ export const dictionary = {
       champion: "Champion",
       top: "Top",
     },
+    leaderboard: {
+      title: "Leaderboard TOP 10",
+      subtitle: "Submit your best score and compare with others.",
+      rank: "Rank",
+      player: "Player",
+      score: "Score",
+      empty: "No scores yet. Be the first to set a record!",
+      loading: "Loading...",
+      yourBest: "Your best",
+      noBest: "Finish the test first to submit your score.",
+      nicknamePlaceholder: "Nickname (max 20)",
+      submit: "Submit score",
+      submitting: "Submitting...",
+      submitted: "Submitted! 🎉",
+      error: "Something went wrong. Please try again.",
+      disclaimer: "Submitting stores the nickname and score you enter on our server. Results vary by setup, so treat them as a reference.",
+    },
     legal: {
       aboutTitle: "About Testier",
       aboutBody:
@@ -147,7 +181,7 @@ export const dictionary = {
         "If you have questions about Testier, bug reports, feature suggestions, advertising or partnership inquiries, or privacy requests, please reach out by email below. We aim to reply within 2-3 business days.",
       privacyTitle: "Privacy Policy",
       privacyBody:
-        "The current Testier MVP does not require sign-up, server storage, or personally identifiable information. Best and recent scores are stored only in your browser localStorage. If ad services are added later, cookie and privacy notices from each ad platform may apply.",
+        "Testier does not require sign-up. Best and recent scores are stored by default in your browser localStorage. However, if you submit to the leaderboard, the nickname and score you enter are stored on our server. If ad services are added later, cookie and privacy notices from each ad platform may apply.",
       termsTitle: "Terms of Use",
       termsBody:
         "Testier results are for entertainment and self-improvement reference only. They are not medical, scientific, or professional evaluations or diagnoses. Your interpretation and use of the results are your responsibility.",

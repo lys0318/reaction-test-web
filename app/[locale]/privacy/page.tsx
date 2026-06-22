@@ -11,7 +11,7 @@ const privacySections = {
   ko: [
     {
       title: "1. 처리하는 정보",
-      body: "테스티어는 현재 회원가입을 제공하지 않으며 이름, 전화번호, 주소와 같은 직접적인 개인 식별 정보를 요구하지 않습니다. 테스트 최고 기록과 최근 기록은 사용자의 브라우저 localStorage에 저장됩니다. 결과 공유 링크를 만들면 점수, 티어, 상위 퍼센트 문구가 URL 쿼리 파라미터에 포함될 수 있습니다.",
+      body: "테스티어는 현재 회원가입을 제공하지 않으며 이름, 전화번호, 주소와 같은 직접적인 개인 식별 정보를 요구하지 않습니다. 테스트 최고 기록과 최근 기록은 사용자의 브라우저 localStorage에 저장됩니다. 리더보드에 기록을 등록하면 사용자가 직접 입력한 닉네임과 점수가 서버(Cloudflare D1)에 저장됩니다. 닉네임에는 실명 등 개인 식별 정보를 입력하지 않는 것을 권장합니다. 결과 공유 링크를 만들면 점수, 티어, 상위 퍼센트 문구가 URL 쿼리 파라미터에 포함될 수 있습니다.",
     },
     {
       title: "2. 자동으로 처리될 수 있는 정보",
@@ -57,7 +57,7 @@ const privacySections = {
   en: [
     {
       title: "1. Information We Process",
-      body: "Testier currently does not provide accounts and does not ask for direct identifiers such as name, phone number, or address. Best and recent test scores are stored in your browser localStorage. When you create a share link, score, tier, and percentile text may be included in the URL query string.",
+      body: "Testier currently does not provide accounts and does not ask for direct identifiers such as name, phone number, or address. Best and recent test scores are stored in your browser localStorage. If you submit a score to the leaderboard, the nickname and score you enter are stored on our server (Cloudflare D1); we recommend not using real names or personal identifiers as a nickname. When you create a share link, score, tier, and percentile text may be included in the URL query string.",
     },
     {
       title: "2. Information That May Be Processed Automatically",
