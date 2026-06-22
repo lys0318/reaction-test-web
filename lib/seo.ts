@@ -68,4 +68,32 @@ export function faqJsonLd(locale: Locale, test: TestDefinition) {
   };
 }
 
+export function websiteJsonLd(locale: Locale) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    name: "Testier",
+    alternateName: "테스티어",
+    url: `${siteUrl}/${locale}`,
+    inLanguage: locale === "ko" ? "ko-KR" : "en-US",
+    description:
+      locale === "ko"
+        ? "반응속도, 에임, 기억력, 집중력, 타자 속도를 측정하고 결과를 티어로 확인하는 무료 웹 테스트 사이트입니다."
+        : "A free web test site for measuring reaction speed, aim, memory, focus, and typing speed, then viewing your tier.",
+  };
+}
+
+export function breadcrumbJsonLd(items: { name: string; path: string }[]) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: items.map((item, index) => ({
+      "@type": "ListItem",
+      position: index + 1,
+      name: item.name,
+      item: `${siteUrl}${item.path}`,
+    })),
+  };
+}
+
 export const publicSiteUrl = siteUrl;

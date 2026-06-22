@@ -7,7 +7,7 @@ import { SectionTitle } from "@/components/common/SectionTitle";
 import { TestCard } from "@/components/tests/TestCard";
 import { getDictionary } from "@/lib/dictionary";
 import { isLocale, type Locale } from "@/lib/locales";
-import { buildMetadata } from "@/lib/seo";
+import { buildMetadata, websiteJsonLd } from "@/lib/seo";
 import { categoryLabels, tests } from "@/lib/tests";
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
@@ -32,6 +32,7 @@ export default async function LocaleHome({ params }: { params: Promise<{ locale:
 
   return (
     <Container className="py-10 sm:py-14">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteJsonLd(locale)) }} />
       <section className="grid gap-8 lg:grid-cols-[1.05fr_0.95fr] lg:items-center">
         <div>
           <h1 className="max-w-4xl text-4xl font-black tracking-tight text-white sm:text-6xl">{dict.home.title}</h1>

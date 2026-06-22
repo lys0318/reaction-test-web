@@ -198,6 +198,120 @@ export const guides: Guide[] = [
       ],
     },
   },
+  {
+    slug: "improve-cps-click-speed",
+    title: { ko: "CPS(초당 클릭 수)를 안전하게 높이는 방법", en: "How to Improve Your CPS (Clicks Per Second) Safely" },
+    description: {
+      ko: "CPS 테스트 점수를 올리는 클릭 방법과 손목 부담을 줄이는 주의사항, 짧은 모드와 긴 모드의 차이를 설명합니다.",
+      en: "Learn clicking techniques that raise CPS scores, how to avoid wrist strain, and how short and long modes differ.",
+    },
+    sections: {
+      ko: [
+        {
+          heading: "클릭 방식의 차이",
+          body: "일반 클릭은 보통 초당 6~8회 정도이며, 지터 클릭이나 버터플라이 클릭 같은 기법은 더 높은 수치를 만들 수 있습니다. 다만 이런 기법은 손목과 손가락에 무리를 줄 수 있으므로 무리하지 않는 범위에서 시도하세요.",
+        },
+        {
+          heading: "짧은 모드와 긴 모드",
+          body: "1초나 5초처럼 짧은 모드는 순간 폭발력이 중요하고, 30초나 60초처럼 긴 모드는 일정한 리듬과 지구력이 더 중요합니다. 목표에 맞는 모드를 골라 연습하면 기록 향상이 더 잘 보입니다.",
+        },
+        {
+          heading: "부상 없이 연습하기",
+          body: "통증이 느껴지면 즉시 멈추고 휴식하세요. 마우스 위치를 바꾸거나 손목 받침을 사용하는 것도 도움이 됩니다. CPS는 재미를 위한 지표이므로 건강을 해치면서까지 기록을 올릴 필요는 없습니다.",
+        },
+      ],
+      en: [
+        {
+          heading: "Different clicking styles",
+          body: "Normal clicking is often around 6-8 clicks per second, while techniques like jitter or butterfly clicking can push higher numbers. These techniques can strain your wrist and fingers, so only try them within a comfortable range.",
+        },
+        {
+          heading: "Short modes vs long modes",
+          body: "Short modes like 1 or 5 seconds reward burst speed, while longer modes like 30 or 60 seconds reward steady rhythm and endurance. Practicing the mode that matches your goal makes progress easier to see.",
+        },
+        {
+          heading: "Practice without injury",
+          body: "Stop and rest immediately if you feel pain. Changing your mouse position or using a wrist rest can help. CPS is a fun metric, so there is no need to chase records at the cost of your health.",
+        },
+      ],
+    },
+  },
+  {
+    slug: "improve-typing-speed",
+    title: { ko: "타자 속도(WPM)와 정확도를 함께 높이는 법", en: "How to Improve Typing Speed (WPM) and Accuracy Together" },
+    description: {
+      ko: "WPM의 의미, 정확도가 속도보다 먼저인 이유, 그리고 꾸준히 타자 속도를 올리는 연습 루틴을 정리했습니다.",
+      en: "Understand what WPM means, why accuracy comes before speed, and a routine that steadily raises typing speed.",
+    },
+    sections: {
+      ko: [
+        {
+          heading: "WPM은 무엇을 뜻하나요",
+          body: "WPM은 분당 단어 수로, 보통 5글자를 한 단어로 환산해 계산합니다. 따라서 같은 글자 수라도 오타 수정에 시간을 많이 쓰면 WPM이 떨어집니다. 속도와 정확도는 함께 묶여 있는 지표입니다.",
+        },
+        {
+          heading: "정확도가 먼저인 이유",
+          body: "오타가 많으면 지우고 다시 치는 시간이 늘어나 결국 전체 속도가 느려집니다. 처음에는 조금 느리더라도 정확하게 치는 습관을 들이고, 정확도가 안정되면 속도를 점차 올리는 편이 효율적입니다.",
+        },
+        {
+          heading: "연습 루틴",
+          body: "손가락을 홈 포지션에 두고, 화면의 문장을 한두 단어 앞서 읽으며, 30초·60초·120초 모드를 번갈아 연습하세요. 같은 문장을 반복하기보다 다양한 문장을 입력하면 실제 타자 능력이 더 고르게 향상됩니다.",
+        },
+      ],
+      en: [
+        {
+          heading: "What WPM means",
+          body: "WPM is words per minute, usually calculated by treating five characters as one word. So even with the same number of characters, spending time fixing typos lowers your WPM. Speed and accuracy are linked.",
+        },
+        {
+          heading: "Why accuracy comes first",
+          body: "Many typos mean more time deleting and retyping, which slows your overall speed. It is more efficient to build accurate habits first, even if slightly slower, then raise speed once accuracy is stable.",
+        },
+        {
+          heading: "A practice routine",
+          body: "Keep your fingers on the home row, read one or two words ahead, and rotate the 30, 60, and 120 second modes. Typing varied passages instead of repeating the same one improves real typing ability more evenly.",
+        },
+      ],
+    },
+  },
+  {
+    slug: "memory-and-focus-training",
+    title: { ko: "기억력·집중력 테스트를 훈련에 활용하는 법", en: "Using Memory and Focus Tests for Training" },
+    description: {
+      ko: "숫자·시각·순서 기억력 테스트와 집중력 테스트를 단순 점수 이상으로 활용하는 방법과 한계를 설명합니다.",
+      en: "How to use number, visual, sequence memory tests and focus tests as more than a single score, and their limits.",
+    },
+    sections: {
+      ko: [
+        {
+          heading: "묶어서 기억하기(청킹)",
+          body: "숫자나 순서를 외울 때 2~3개씩 묶어 기억하는 청킹 기법은 작업 기억의 부담을 줄여줍니다. 시각 기억 테스트에서는 위치를 모양이나 패턴으로 묶어 기억하면 더 오래 버틸 수 있습니다.",
+        },
+        {
+          heading: "집중력과 반응 억제",
+          body: "색상 매칭이나 Go/No-Go 같은 테스트는 빠르게 반응하는 능력뿐 아니라 눌러야 할 때와 참아야 할 때를 구분하는 억제력을 함께 봅니다. 오답을 줄이는 연습이 단순히 빠른 손보다 더 중요할 수 있습니다.",
+        },
+        {
+          heading: "결과 해석의 한계",
+          body: "이 테스트들은 재미와 자기 점검을 위한 참고 지표이며, 의학적·심리학적 진단이 아닙니다. 컨디션, 수면, 주변 환경에 따라 결과가 크게 달라질 수 있으므로 한 번의 점수보다 흐름을 보세요.",
+        },
+      ],
+      en: [
+        {
+          heading: "Chunking to remember more",
+          body: "Grouping digits or steps into sets of two or three, called chunking, reduces the load on working memory. In visual memory tests, remembering positions as shapes or patterns helps you last longer.",
+        },
+        {
+          heading: "Focus and response inhibition",
+          body: "Tests like color matching or Go/No-Go measure not only fast responses but also the inhibition to tell when to press and when to hold back. Reducing wrong answers can matter more than a fast hand.",
+        },
+        {
+          heading: "Limits of interpretation",
+          body: "These tests are reference indicators for fun and self-checking, not medical or psychological diagnoses. Results vary with condition, sleep, and environment, so watch the trend rather than a single score.",
+        },
+      ],
+    },
+  },
 ];
 
 export function getGuide(slug: string): Guide | undefined {

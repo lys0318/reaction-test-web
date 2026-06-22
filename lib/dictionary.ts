@@ -8,6 +8,7 @@ export const dictionary = {
       tests: "테스트",
       guides: "가이드",
       about: "소개",
+      contact: "문의",
       privacy: "개인정보",
       terms: "이용약관",
     },
@@ -65,6 +66,9 @@ export const dictionary = {
       aboutTitle: "테스티어 소개",
       aboutBody:
         "테스티어(Testier)는 Test와 Tier를 합쳐 만든 이름입니다. 반응속도, 조준력, 기억력, 집중력, 타자 속도를 간단히 확인하고 결과를 브론즈부터 챔피언까지의 티어로 이해할 수 있는 무료 웹 테스트 사이트입니다. 모든 테스트는 브라우저 안에서 실행되며 서버나 데이터베이스 없이 기록을 기기에 저장합니다.",
+      contactTitle: "문의하기",
+      contactIntro:
+        "테스티어 이용 중 궁금한 점, 버그 신고, 기능 제안, 광고 및 제휴 문의, 개인정보 관련 요청이 있으시면 아래 이메일로 연락해 주세요. 보통 영업일 기준 2~3일 이내에 답변드리도록 노력하고 있습니다.",
       privacyTitle: "개인정보 처리방침",
       privacyBody:
         "현재 테스티어 MVP는 회원가입, 서버 저장, 개인 식별 정보 수집을 하지 않습니다. 최고 기록과 최근 기록은 사용자의 브라우저 localStorage에만 저장됩니다. 향후 광고 서비스 적용 시 각 광고 플랫폼의 쿠키 및 개인정보 정책이 추가될 수 있습니다.",
@@ -80,6 +84,7 @@ export const dictionary = {
       tests: "Tests",
       guides: "Guides",
       about: "About",
+      contact: "Contact",
       privacy: "Privacy",
       terms: "Terms",
     },
@@ -137,6 +142,9 @@ export const dictionary = {
       aboutTitle: "About Testier",
       aboutBody:
         "Testier combines Test and Tier. It is a free web testing site for checking reaction speed, aim, memory, focus, and typing speed, then interpreting results through tiers from Bronze to Champion. Every test runs in the browser and stores records on your device without a server or database.",
+      contactTitle: "Contact",
+      contactIntro:
+        "If you have questions about Testier, bug reports, feature suggestions, advertising or partnership inquiries, or privacy requests, please reach out by email below. We aim to reply within 2-3 business days.",
       privacyTitle: "Privacy Policy",
       privacyBody:
         "The current Testier MVP does not require sign-up, server storage, or personally identifiable information. Best and recent scores are stored only in your browser localStorage. If ad services are added later, cookie and privacy notices from each ad platform may apply.",

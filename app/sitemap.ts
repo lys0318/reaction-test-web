@@ -6,7 +6,7 @@ import { tests } from "@/lib/tests";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date();
-  const staticPaths = ["", "/tests", "/guides", "/about", "/privacy", "/terms"];
+  const staticPaths = ["", "/tests", "/guides", "/about", "/contact", "/privacy", "/terms"];
   return locales.flatMap((locale) => [
     ...staticPaths.map((path) => ({
       url: `${publicSiteUrl}/${locale}${path}`,

@@ -9,6 +9,7 @@ export function Header({ locale }: { locale: Locale }) {
     { href: `/${locale}/tests`, label: dict.nav.tests },
     { href: `/${locale}/guides`, label: dict.nav.guides },
     { href: `/${locale}/about`, label: dict.nav.about },
+    { href: `/${locale}/contact`, label: dict.nav.contact },
     { href: `/${locale}/privacy`, label: dict.nav.privacy },
     { href: `/${locale}/terms`, label: dict.nav.terms },
   ];

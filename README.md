@@ -92,6 +92,7 @@ app/
       page.tsx
       [slug]/page.tsx
     about/page.tsx
+    contact/page.tsx
     privacy/page.tsx
     terms/page.tsx
   icon.svg

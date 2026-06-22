@@ -6,7 +6,7 @@ import { AdPlaceholder } from "@/components/common/AdPlaceholder";
 import { getDictionary } from "@/lib/dictionary";
 import { getGuide, guides } from "@/lib/guides";
 import { isLocale, type Locale } from "@/lib/locales";
-import { buildMetadata } from "@/lib/seo";
+import { breadcrumbJsonLd, buildMetadata } from "@/lib/seo";
 
 export function generateStaticParams() {
   return guides.map((guide) => ({ slug: guide.slug }));
@@ -35,9 +35,15 @@ export default async function GuidePage({ params }: { params: Promise<{ locale: 
   const guide = getGuide(slug);
   if (!guide) notFound();
   const dict = getDictionary(locale);
+  const breadcrumb = breadcrumbJsonLd([
+    { name: "Testier", path: `/${locale}` },
+    { name: dict.nav.guides, path: `/${locale}/guides` },
+    { name: guide.title[locale], path: `/${locale}/guides/${guide.slug}` },
+  ]);
 
   return (
     <Container className="py-12">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumb) }} />
       <article className="mx-auto max-w-3xl">
         <Link href={`/${locale}/guides`} className="text-sm font-bold text-cyan-200 hover:text-cyan-100">
           {locale === "ko" ? "← 가이드 목록" : "← All guides"}
