@@ -73,8 +73,8 @@ export function TestLayout({
             <h3 className="font-black text-white">{locale === "ko" ? "공정하게 측정하려면" : "For a fair run"}</h3>
             <p className="mt-2">
               {locale === "ko"
-                ? "같은 기기와 브라우저에서 반복 측정하고, 배터리 절약 모드나 백그라운드 작업을 줄이면 더 안정적인 기록을 얻을 수 있습니다. 기록은 현재 브라우저에만 저장됩니다."
-                : "Use the same device and browser, reduce background work, and avoid battery-saving modes for more consistent runs. Scores are stored only in the current browser."}
+                ? "같은 기기와 브라우저에서 반복 측정하고, 배터리 절약 모드나 백그라운드 작업을 줄이면 더 안정적인 기록을 얻을 수 있습니다. 기록은 브라우저에 저장되며, 리더보드에 등록할 때만 닉네임과 점수가 서버에 저장됩니다."
+                : "Use the same device and browser, reduce background work, and avoid battery-saving modes for more consistent runs. Scores are stored in your browser; only leaderboard submissions save a nickname and score on our server."}
             </p>
           </article>
         </div>

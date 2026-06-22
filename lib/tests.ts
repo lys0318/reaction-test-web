@@ -42,7 +42,7 @@ const commonFaq = {
   ko: [
     {
       question: "기록은 어디에 저장되나요?",
-      answer: "기록은 서버가 아니라 현재 브라우저의 localStorage에 저장됩니다.",
+      answer: "최고 기록과 최근 기록은 현재 브라우저의 localStorage에 저장됩니다. 리더보드에 등록한 경우에만 입력한 닉네임과 점수가 서버에 저장됩니다.",
     },
     {
       question: "모바일에서도 사용할 수 있나요?",
@@ -52,7 +52,7 @@ const commonFaq = {
   en: [
     {
       question: "Where are my records stored?",
-      answer: "Records are stored in your browser localStorage, not on a server.",
+      answer: "Best and recent scores are stored in your browser localStorage. Only when you submit to the leaderboard are the nickname and score you enter saved on a server.",
     },
     {
       question: "Does it work on mobile?",

@@ -98,8 +98,8 @@ export default async function LocaleHome({ params }: { params: Promise<{ locale:
           </p>
           <p>
             {locale === "ko"
-              ? "모든 테스트는 설치 없이 브라우저에서 실행되며, 최고 기록과 최근 기록은 현재 기기의 브라우저 저장소에만 남습니다. 서버 계정이나 로그인은 필요하지 않습니다."
-              : "Every test runs directly in the browser with no installation. Best and recent scores stay in local browser storage, so no account or login is required."}
+              ? "모든 테스트는 설치 없이 브라우저에서 실행되며, 최고 기록과 최근 기록은 현재 기기의 브라우저에 저장됩니다. 회원가입이나 로그인은 필요 없고, 리더보드에 등록할 때 입력한 닉네임과 점수만 서버에 저장됩니다."
+              : "Every test runs directly in the browser with no installation. Best and recent scores stay on your device, with no account or login required; only the nickname and score you submit to the leaderboard are saved on our server."}
           </p>
           <p>
             {locale === "ko"

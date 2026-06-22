@@ -40,6 +40,17 @@ export function Leaderboard({
     void load();
   }, [load]);
 
+  // When a new best arrives (e.g. the player just finished a run), re-enable
+  // the submit form even if they had already submitted a previous score.
+  const lastBestRef = useRef<number | null>(null);
+  useEffect(() => {
+    const value = best?.value ?? null;
+    if (lastBestRef.current !== null && value !== lastBestRef.current) {
+      setStatus("idle");
+    }
+    lastBestRef.current = value;
+  }, [best]);
+
   const submit = useCallback(async () => {
     const name = nickname.trim();
     if (!best || !name || status === "submitting") return;

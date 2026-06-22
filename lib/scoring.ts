@@ -91,18 +91,20 @@ function percentileFor(tier: TierKey): number {
 }
 
 export function getReactionRating(ms: number, locale: Locale): Rating {
+  // Calibrated for browser-measured 5-round averages, which run ~50-100ms
+  // higher than native reaction due to display refresh and input latency.
   const tier: TierKey =
-    ms <= 150
+    ms <= 180
       ? "champion"
-      : ms <= 180
+      : ms <= 210
         ? "master"
-        : ms <= 210
+        : ms <= 240
           ? "diamond"
-          : ms <= 240
+          : ms <= 270
             ? "platinum"
-            : ms <= 280
+            : ms <= 310
               ? "gold"
-              : ms <= 340
+              : ms <= 360
                 ? "silver"
                 : "bronze";
   return makeRating(tier, percentileFor(tier), locale);

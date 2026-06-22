@@ -2,7 +2,7 @@
 
 Testier, also written as 테스티어, combines **Test + Tier**. It is a bilingual revenue-ready web test site for reaction speed, F1 race-start reaction, audio reaction, choice reaction, peripheral reaction, FPS-style target reaction, aim, CPS, spacebar speed, keyboard reaction, number memory, visual memory, color matching, focus, typing speed, and sequence memory.
 
-The app is built with Next.js App Router, TypeScript, React, and Tailwind CSS. It uses no server or database for the MVP. Best scores and recent scores are stored in browser `localStorage`.
+The app is built with Next.js App Router, TypeScript, React, and Tailwind CSS. Best scores and recent scores are stored in browser `localStorage`; the only server-side data is the global Top 10 leaderboard, stored in Cloudflare D1 (nickname + score submitted by the player).
 
 ## Main Features
 

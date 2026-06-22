@@ -82,7 +82,7 @@ export const dictionary = {
     legal: {
       aboutTitle: "테스티어 소개",
       aboutBody:
-        "테스티어(Testier)는 Test와 Tier를 합쳐 만든 이름입니다. 반응속도, 조준력, 기억력, 집중력, 타자 속도를 간단히 확인하고 결과를 브론즈부터 챔피언까지의 티어로 이해할 수 있는 무료 웹 테스트 사이트입니다. 모든 테스트는 브라우저 안에서 실행되며 서버나 데이터베이스 없이 기록을 기기에 저장합니다.",
+        "테스티어(Testier)는 Test와 Tier를 합쳐 만든 이름입니다. 반응속도, 조준력, 기억력, 집중력, 타자 속도를 간단히 확인하고 결과를 브론즈부터 챔피언까지의 티어로 이해할 수 있는 무료 웹 테스트 사이트입니다. 모든 테스트는 브라우저 안에서 실행되고 최고 기록과 최근 기록은 사용자 기기의 브라우저에 저장됩니다. 리더보드에 직접 등록한 닉네임과 점수만 서버에 저장됩니다.",
       contactTitle: "문의하기",
       contactIntro:
         "테스티어 이용 중 궁금한 점, 버그 신고, 기능 제안, 광고 및 제휴 문의, 개인정보 관련 요청이 있으시면 아래 이메일로 연락해 주세요. 보통 영업일 기준 2~3일 이내에 답변드리도록 노력하고 있습니다.",
@@ -175,7 +175,7 @@ export const dictionary = {
     legal: {
       aboutTitle: "About Testier",
       aboutBody:
-        "Testier combines Test and Tier. It is a free web testing site for checking reaction speed, aim, memory, focus, and typing speed, then interpreting results through tiers from Bronze to Champion. Every test runs in the browser and stores records on your device without a server or database.",
+        "Testier combines Test and Tier. It is a free web testing site for checking reaction speed, aim, memory, focus, and typing speed, then interpreting results through tiers from Bronze to Champion. Every test runs in the browser, and best and recent scores are stored on your device. Only the nickname and score you submit to the leaderboard are saved on our server.",
       contactTitle: "Contact",
       contactIntro:
         "If you have questions about Testier, bug reports, feature suggestions, advertising or partnership inquiries, or privacy requests, please reach out by email below. We aim to reply within 2-3 business days.",

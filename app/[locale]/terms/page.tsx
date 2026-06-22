@@ -23,7 +23,7 @@ const termsSections = {
     },
     {
       title: "4. 기록 저장과 공유",
-      body: "테스트 기록은 기본적으로 사용자의 브라우저 localStorage에 저장됩니다. 결과 공유 링크에는 점수, 티어, 상위 퍼센트 문구가 URL에 포함될 수 있으므로 공개 게시 전 공유 내용을 확인해야 합니다.",
+      body: "테스트 기록은 기본적으로 사용자의 브라우저 localStorage에 저장됩니다. 리더보드에 직접 등록하면 입력한 닉네임과 점수가 서버에 저장되어 다른 이용자에게 공개될 수 있습니다. 결과 공유 링크에는 점수, 티어, 상위 퍼센트 문구가 URL에 포함될 수 있으므로 공개 게시 전 공유 내용을 확인해야 합니다.",
     },
     {
       title: "5. 이용자의 책임",
@@ -69,7 +69,7 @@ const termsSections = {
     },
     {
       title: "4. Records and Sharing",
-      body: "Test records are stored by default in your browser localStorage. Result share links may include score, tier, and percentile text in the URL, so review the shared content before posting it publicly.",
+      body: "Test records are stored by default in your browser localStorage. If you submit to the leaderboard, the nickname and score you enter are stored on our server and may be shown publicly to other users. Result share links may include score, tier, and percentile text in the URL, so review the shared content before posting it publicly.",
     },
     {
       title: "5. User Responsibility",
