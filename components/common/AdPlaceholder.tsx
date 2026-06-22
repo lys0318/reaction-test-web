@@ -1,16 +1,13 @@
 import type { Locale } from "@/lib/locales";
-import { getDictionary } from "@/lib/dictionary";
+import { AdFitBanner } from "./AdFitBanner";
 
-export function AdPlaceholder({ locale, compact = false }: { locale: Locale; compact?: boolean }) {
-  const dict = getDictionary(locale);
+export function AdPlaceholder({ locale }: { locale: Locale }) {
   return (
-    <aside
-      aria-label={dict.common.ad}
-      className={`flex w-full items-center justify-center rounded-lg border border-dashed border-cyan-300/25 bg-slate-950/70 text-center text-xs font-bold uppercase tracking-[0.24em] text-cyan-200/70 ${
-        compact ? "min-h-20" : "min-h-28"
-      }`}
-    >
-      {dict.common.ad}
-    </aside>
+    <div className="w-full">
+      <p className="mb-1 text-center text-[10px] font-bold uppercase tracking-[0.22em] text-slate-600">
+        {locale === "ko" ? "광고" : "Advertisement"}
+      </p>
+      <AdFitBanner />
+    </div>
   );
 }

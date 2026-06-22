@@ -81,7 +81,6 @@ export function TestLayout({
       </section>
       <TestBenchmarkGuide locale={locale} test={test} />
       <FAQ title={dict.common.faq} items={test.faq[locale]} />
-      <AdPlaceholder locale={locale} compact />
     </div>
   );
 }
