@@ -1,0 +1,41 @@
+import type { Locale } from "@/lib/locales";
+import type { TestDefinition } from "@/lib/tests";
+import { AimTrainer30Test } from "./AimTrainer30Test";
+import { AimTest } from "./AimTest";
+import { AudioReactionTest } from "./AudioReactionTest";
+import { ChoiceReactionTest } from "./ChoiceReactionTest";
+import { ColorMatchTest } from "./ColorMatchTest";
+import { CPSTest } from "./CPSTest";
+import { FocusTest } from "./FocusTest";
+import { FPSReactionTest } from "./FPSReactionTest";
+import { F1RaceStartTest } from "./F1RaceStartTest";
+import { GoNoGoTest } from "./GoNoGoTest";
+import { KeyboardReactionTest } from "./KeyboardReactionTest";
+import { NumberMemoryTest } from "./NumberMemoryTest";
+import { PeripheralReactionTest } from "./PeripheralReactionTest";
+import { ReactionTimeTest } from "./ReactionTimeTest";
+import { SequenceMemoryTest } from "./SequenceMemoryTest";
+import { SpacebarCounterTest } from "./SpacebarCounterTest";
+import { TypingSpeedTest } from "./TypingSpeedTest";
+import { VisualMemoryTest } from "./VisualMemoryTest";
+
+export function TestRenderer({ locale, test }: { locale: Locale; test: TestDefinition }) {
+  if (test.slug === "reaction-time") return <ReactionTimeTest locale={locale} test={test} />;
+  if (test.slug === "f1-race-start") return <F1RaceStartTest locale={locale} test={test} />;
+  if (test.slug === "audio-reaction") return <AudioReactionTest locale={locale} test={test} />;
+  if (test.slug === "choice-reaction") return <ChoiceReactionTest locale={locale} test={test} />;
+  if (test.slug === "peripheral-reaction") return <PeripheralReactionTest locale={locale} test={test} />;
+  if (test.slug === "go-no-go") return <GoNoGoTest locale={locale} test={test} />;
+  if (test.slug === "fps-reaction") return <FPSReactionTest locale={locale} test={test} />;
+  if (test.slug === "aim") return <AimTest locale={locale} test={test} />;
+  if (test.slug === "aim-trainer-30") return <AimTrainer30Test locale={locale} test={test} />;
+  if (test.slug === "cps") return <CPSTest locale={locale} test={test} />;
+  if (test.slug === "spacebar-counter") return <SpacebarCounterTest locale={locale} test={test} />;
+  if (test.slug === "keyboard-reaction") return <KeyboardReactionTest locale={locale} test={test} />;
+  if (test.slug === "number-memory") return <NumberMemoryTest locale={locale} test={test} />;
+  if (test.slug === "visual-memory") return <VisualMemoryTest locale={locale} test={test} />;
+  if (test.slug === "color-match") return <ColorMatchTest locale={locale} test={test} />;
+  if (test.slug === "focus") return <FocusTest locale={locale} test={test} />;
+  if (test.slug === "typing-speed") return <TypingSpeedTest locale={locale} test={test} />;
+  return <SequenceMemoryTest locale={locale} test={test} />;
+}
