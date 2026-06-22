@@ -13,3 +13,8 @@ const nextConfig: NextConfig = {
 };
 
 export default nextConfig;
+
+// Enables Cloudflare bindings (D1, KV, etc.) during `next dev` via the
+// OpenNext adapter. No-op outside local development.
+import { initOpenNextCloudflareForDev } from "@opennextjs/cloudflare";
+initOpenNextCloudflareForDev();
