@@ -2,6 +2,9 @@
   "$schema": "./node_modules/wrangler/config-schema.json",
   "main": ".open-next/worker.js",
   "name": "reaction-test-web",
+  // Serve only via the custom domain (test-tier.com); disable the
+  // reaction-test-web.lys03.workers.dev URL to avoid duplicate content.
+  "workers_dev": false,
   "compatibility_date": "2026-06-22",
   "compatibility_flags": ["nodejs_compat"],
   "assets": {
