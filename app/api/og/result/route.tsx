@@ -1,7 +1,5 @@
 import { ImageResponse } from "next/og";
 
-export const runtime = "edge";
-
 function readParam(url: URL, key: string, fallback: string) {
   return url.searchParams.get(key)?.slice(0, 80) || fallback;
 }
