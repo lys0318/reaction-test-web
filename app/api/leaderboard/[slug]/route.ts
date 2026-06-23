@@ -5,7 +5,7 @@ import { cleanNickname, validateValue, type LeaderboardEntry } from "@/lib/leade
 
 export const dynamic = "force-dynamic";
 
-// Minimal D1 surface we use, to avoid depending on generated env types.
+// Minimal binding surfaces, to avoid depending on generated env types.
 interface D1PreparedStatement {
   bind(...values: unknown[]): D1PreparedStatement;
   all<T = Record<string, unknown>>(): Promise<{ results: T[] }>;
@@ -14,13 +14,38 @@ interface D1PreparedStatement {
 interface D1Database {
   prepare(query: string): D1PreparedStatement;
 }
+interface RateLimiter {
+  limit(options: { key: string }): Promise<{ success: boolean }>;
+}
+type Env = {
+  DB?: D1Database;
+  LEADERBOARD_RL?: RateLimiter;
+  TURNSTILE_SECRET_KEY?: string;
+};
 
-function getDb(): D1Database | null {
+function getEnv(): Env {
   try {
-    const { env } = getCloudflareContext();
-    return (env as unknown as { DB?: D1Database }).DB ?? null;
+    return getCloudflareContext().env as unknown as Env;
   } catch {
-    return null;
+    return {};
+  }
+}
+
+function clientIp(request: Request): string {
+  return request.headers.get("cf-connecting-ip") || "anon";
+}
+
+async function verifyTurnstile(secret: string, token: string | undefined, ip: string): Promise<boolean> {
+  if (!token) return false;
+  try {
+    const res = await fetch("https://challenges.cloudflare.com/turnstile/v0/siteverify", {
+      method: "POST",
+      body: new URLSearchParams({ secret, response: token, remoteip: ip }),
+    });
+    const data = (await res.json()) as { success?: boolean };
+    return data.success === true;
+  } catch {
+    return false;
   }
 }
 
@@ -37,11 +62,10 @@ export async function GET(_request: Request, { params }: { params: Promise<{ slu
   const test = getTest(slug);
   if (!test) return NextResponse.json({ error: "unknown_test" }, { status: 404 });
 
-  const db = getDb();
+  const db = getEnv().DB;
   if (!db) return NextResponse.json({ entries: [] });
   try {
-    const entries = await topScores(db, slug, test.higherIsBetter);
-    return NextResponse.json({ entries });
+    return NextResponse.json({ entries: await topScores(db, slug, test.higherIsBetter) });
   } catch {
     return NextResponse.json({ entries: [] });
   }
@@ -52,8 +76,17 @@ export async function POST(request: Request, { params }: { params: Promise<{ slu
   const test = getTest(slug);
   if (!test) return NextResponse.json({ error: "unknown_test" }, { status: 404 });
 
-  const db = getDb();
+  const env = getEnv();
+  const db = env.DB;
   if (!db) return NextResponse.json({ error: "unavailable" }, { status: 503 });
+
+  const ip = clientIp(request);
+
+  // Rate limit submissions per IP + test (no-op if the binding is absent).
+  if (env.LEADERBOARD_RL) {
+    const { success } = await env.LEADERBOARD_RL.limit({ key: `${slug}:${ip}` });
+    if (!success) return NextResponse.json({ error: "rate_limited" }, { status: 429 });
+  }
 
   let body: unknown;
   try {
@@ -61,11 +94,18 @@ export async function POST(request: Request, { params }: { params: Promise<{ slu
   } catch {
     return NextResponse.json({ error: "bad_json" }, { status: 400 });
   }
-
-  const { nickname: rawNickname, value: rawValue } = (body ?? {}) as {
+  const { nickname: rawNickname, value: rawValue, turnstileToken } = (body ?? {}) as {
     nickname?: unknown;
     value?: unknown;
+    turnstileToken?: string;
   };
+
+  // Bot protection: verify the Turnstile token when a secret is configured.
+  if (env.TURNSTILE_SECRET_KEY) {
+    const ok = await verifyTurnstile(env.TURNSTILE_SECRET_KEY, turnstileToken, ip);
+    if (!ok) return NextResponse.json({ error: "turnstile_failed" }, { status: 403 });
+  }
+
   const nickname = cleanNickname(rawNickname);
   const value = validateValue(rawValue, test.scoreType);
   if (!nickname) return NextResponse.json({ error: "bad_nickname" }, { status: 400 });
@@ -76,8 +116,7 @@ export async function POST(request: Request, { params }: { params: Promise<{ slu
       .prepare("INSERT INTO scores (test_slug, nickname, value, created_at) VALUES (?1, ?2, ?3, ?4)")
       .bind(slug, nickname, value, Date.now())
       .run();
-    const entries = await topScores(db, slug, test.higherIsBetter);
-    return NextResponse.json({ ok: true, entries });
+    return NextResponse.json({ ok: true, entries: await topScores(db, slug, test.higherIsBetter) });
   } catch {
     return NextResponse.json({ error: "db_error" }, { status: 500 });
   }

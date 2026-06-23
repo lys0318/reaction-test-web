@@ -4,6 +4,7 @@ import { useCallback, useEffect, useRef, useState } from "react";
 import { getDictionary } from "@/lib/dictionary";
 import { formatScoreValue, NICKNAME_MAX, type LeaderboardEntry, type ScoreType } from "@/lib/leaderboard";
 import type { Locale } from "@/lib/locales";
+import { Turnstile, turnstileEnabled } from "@/components/common/Turnstile";
 import { useScores } from "@/components/tests/useScores";
 
 type Status = "idle" | "submitting" | "submitted" | "error";
@@ -22,6 +23,9 @@ export function Leaderboard({
   const [entries, setEntries] = useState<LeaderboardEntry[] | null>(null);
   const [nickname, setNickname] = useState("");
   const [status, setStatus] = useState<Status>("idle");
+  const [errorMsg, setErrorMsg] = useState("");
+  const [token, setToken] = useState<string | null>(null);
+  const [verifyNonce, setVerifyNonce] = useState(0);
   const loadedRef = useRef(false);
 
   const load = useCallback(async () => {
@@ -40,13 +44,15 @@ export function Leaderboard({
     void load();
   }, [load]);
 
-  // When a new best arrives (e.g. the player just finished a run), re-enable
-  // the submit form even if they had already submitted a previous score.
+  // Re-enable submission (and require a fresh verification) when a new best
+  // arrives after a previous submission.
   const lastBestRef = useRef<number | null>(null);
   useEffect(() => {
     const value = best?.value ?? null;
     if (lastBestRef.current !== null && value !== lastBestRef.current) {
       setStatus("idle");
+      setToken(null);
+      setVerifyNonce((n) => n + 1);
     }
     lastBestRef.current = value;
   }, [best]);
@@ -54,21 +60,39 @@ export function Leaderboard({
   const submit = useCallback(async () => {
     const name = nickname.trim();
     if (!best || !name || status === "submitting") return;
+    if (turnstileEnabled && !token) {
+      setErrorMsg(t.verifyNeeded);
+      setStatus("error");
+      return;
+    }
     setStatus("submitting");
+    setErrorMsg("");
     try {
       const res = await fetch(`/api/leaderboard/${slug}`, {
         method: "POST",
         headers: { "content-type": "application/json" },
-        body: JSON.stringify({ nickname: name, value: best.value }),
+        body: JSON.stringify({ nickname: name, value: best.value, turnstileToken: token ?? undefined }),
       });
-      if (!res.ok) throw new Error("request failed");
+      if (!res.ok) {
+        setErrorMsg(res.status === 429 ? t.rateLimited : res.status === 403 ? t.verifyFailed : t.error);
+        setStatus("error");
+        setToken(null);
+        setVerifyNonce((n) => n + 1);
+        return;
+      }
       const data = (await res.json()) as { entries?: LeaderboardEntry[] };
       if (data.entries) setEntries(data.entries);
       setStatus("submitted");
     } catch {
+      setErrorMsg(t.error);
       setStatus("error");
+      setToken(null);
+      setVerifyNonce((n) => n + 1);
     }
-  }, [best, nickname, slug, status]);
+  }, [best, nickname, slug, status, token, t]);
+
+  const submitDisabled =
+    status === "submitting" || nickname.trim().length === 0 || (turnstileEnabled && !token);
 
   return (
     <section className="rounded-lg border border-cyan-300/20 bg-slate-950/60 p-5">
@@ -132,13 +156,16 @@ export function Leaderboard({
                 <button
                   type="button"
                   onClick={submit}
-                  disabled={status === "submitting" || nickname.trim().length === 0}
+                  disabled={submitDisabled}
                   className="rounded-md bg-cyan-300 px-5 py-2 text-sm font-black text-slate-950 transition hover:bg-cyan-200 disabled:cursor-not-allowed disabled:opacity-40"
                 >
                   {status === "submitting" ? t.submitting : t.submit}
                 </button>
               </div>
-              {status === "error" && <p className="mt-2 text-sm font-semibold text-rose-300">{t.error}</p>}
+              <Turnstile key={verifyNonce} onToken={setToken} />
+              {status === "error" && errorMsg && (
+                <p className="mt-2 text-sm font-semibold text-rose-300">{errorMsg}</p>
+              )}
             </div>
           )
         ) : (

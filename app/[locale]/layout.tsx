@@ -26,6 +26,11 @@ export const metadata: Metadata = {
     template: "%s | Testier",
   },
   description: "Test your reaction, aim, memory, focus, and typing speed, then discover your tier.",
+  verification: {
+    other: {
+      "naver-site-verification": "b754a1b4b39eaec673a2a534a0a4c6e21448ccda",
+    },
+  },
 };
 
 export function generateStaticParams() {

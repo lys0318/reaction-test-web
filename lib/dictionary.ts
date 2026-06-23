@@ -77,6 +77,9 @@ export const dictionary = {
       submitting: "등록 중...",
       submitted: "등록되었어요! 🎉",
       error: "문제가 발생했어요. 잠시 후 다시 시도해 주세요.",
+      verifyNeeded: "보안 인증을 완료해 주세요.",
+      rateLimited: "너무 자주 시도했어요. 잠시 후 다시 등록해 주세요.",
+      verifyFailed: "보안 인증에 실패했어요. 다시 시도해 주세요.",
       disclaimer: "리더보드에 등록하면 입력한 닉네임과 점수가 서버에 저장됩니다. 측정 환경에 따라 기록이 달라질 수 있어 참고용입니다.",
     },
     legal: {
@@ -170,6 +173,9 @@ export const dictionary = {
       submitting: "Submitting...",
       submitted: "Submitted! 🎉",
       error: "Something went wrong. Please try again.",
+      verifyNeeded: "Please complete the verification.",
+      rateLimited: "Too many attempts. Please try again in a moment.",
+      verifyFailed: "Verification failed. Please try again.",
       disclaimer: "Submitting stores the nickname and score you enter on our server. Results vary by setup, so treat them as a reference.",
     },
     legal: {
